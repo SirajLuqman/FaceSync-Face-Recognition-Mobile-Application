@@ -1,0 +1,6 @@
+<resources>
+    <color name="base_black">#000F14</color>
+    <color name="accent_cyan">#00FFFF</color>
+    <color name="label_grey">#7A8C99</color>
+    <color name="white">#FFFFFF</color>
+</resources>

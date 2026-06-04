@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_black"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <!-- Back Arrow -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/accent_cyan"
+            android:contentDescription="Go Back"/>
+
+        <!-- Heading -->
+        <TextView
+            android:id="@+id/tvLoginHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin Login"
+            android:textSize="28sp"
+            android:textColor="@color/accent_cyan"
+            android:fontFamily="@font/orbitron_bold"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:lineSpacingExtra="4sp"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Admin ID Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutAdminID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Admin ID / Email"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/text_input_stroke"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/accent_cyan"
+            android:textColorHint="#7A8C99"
+            app:boxBackgroundColor="@android:color/transparent"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAdminID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:inputType="textEmailAddress"
+                android:maxLength="30"
+                android:maxLines="1"
+                android:padding="16dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Admin Password Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutAdminPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/text_input_stroke"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/accent_cyan"
+            android:textColorHint="#7A8C99"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/accent_cyan"
+            app:boxBackgroundColor="@android:color/transparent"
+            android:layout_marginBottom="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAdminPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:padding="16dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Forgot Password -->
+        <TextView
+            android:id="@+id/tvForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password?"
+            android:textSize="14sp"
+            android:textColor="@color/accent_cyan"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_gravity="end"
+            android:padding="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <!-- Login Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAdminLoginSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="LOGIN"
+            android:textSize="18sp"
+            android:textColor="@color/base_black"
+            android:fontFamily="@font/orbitron_bold"
+            android:letterSpacing="0.1"
+            android:backgroundTint="@color/accent_cyan"
+            app:cornerRadius="14dp"
+            android:layout_marginTop="16dp"
+            android:elevation="4dp"/>
+
+        <!-- Error Message -->
+        <TextView
+            android:id="@+id/tvLoginError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF5252"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+</ScrollView>

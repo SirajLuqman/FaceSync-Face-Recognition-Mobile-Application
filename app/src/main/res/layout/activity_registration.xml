@@ -1,0 +1,180 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000F14">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="#00FFFF"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:text="Enroll New User"
+            android:textColor="#00FFFF"
+            android:textSize="22sp"
+            android:fontFamily="@font/orbitron_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="#000"
+            app:strokeColor="#00FFFF"
+            app:strokeWidth="1dp">
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/registrationPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <View
+                android:layout_width="280dp"
+                android:layout_height="350dp"
+                android:layout_gravity="center"
+                android:background="@drawable/camera_border"
+                android:alpha="0.4"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCapture"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:text="CAPTURE IMAGE"
+            android:fontFamily="@font/orbitron_bold"
+            android:backgroundTint="#00FFFF"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/tvCaptureCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Images Captured: 0/5"
+            android:textColor="#00FFFF"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp" />
+
+        <HorizontalScrollView
+            android:id="@+id/hsvGallery"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:background="#0D00FFFF"
+            android:padding="8dp"
+            android:contentDescription="Captured images preview"> <LinearLayout
+            android:id="@+id/llImagePreviewContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Full Name"
+            app:hintTextColor="#00FFFF"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#000F14"
+            app:boxStrokeColor="@color/text_input_stroke"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            android:textColorHint="#7A8C99">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:padding="16dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="User ID"
+            app:hintTextColor="#00FFFF"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#000F14"
+            app:boxStrokeColor="@color/text_input_stroke"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            android:textColorHint="#7A8C99">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:padding="16dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Role (e.g., Student/Staff)"
+            app:hintTextColor="#00FFFF"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#000F14"
+            app:boxStrokeColor="@color/text_input_stroke"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            android:textColorHint="#7A8C99">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:padding="16dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ProgressBar
+            android:id="@+id/registrationProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:indeterminateTint="#00FFFF" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/orbitron_bold"
+            android:text="SAVE USER TO DATABASE"
+            android:backgroundTint="#00FFFF"
+            android:textColor="#000"
+            app:rippleColor="#33000000" />
+
+    </LinearLayout>
+</ScrollView>

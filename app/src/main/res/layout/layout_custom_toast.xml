@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/result_card_border"
+    android:orientation="horizontal"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="12dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/toastText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SYSTEM NOTIFICATION"
+        android:textColor="#00FFFF"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif-black"
+        android:textAllCaps="true"
+        android:letterSpacing="0.1"/>
+</LinearLayout>

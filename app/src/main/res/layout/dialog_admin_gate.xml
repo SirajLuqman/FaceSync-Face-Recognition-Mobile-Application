@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/result_card_border"
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADMIN ACCESS"
+            android:textColor="@color/accent_cyan"
+            android:textSize="20sp"
+            android:fontFamily="@font/orbitron_bold"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+
+        <ImageButton
+            android:id="@+id/btnCloseDialog"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_close"
+            app:tint="@color/accent_cyan"
+            android:contentDescription="Close"/>
+    </RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutAdminID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Admin Email or ID"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/text_input_stroke"
+        app:hintTextColor="@color/accent_cyan"
+        android:textColorHint="#7A8C99"
+        app:boxBackgroundColor="@android:color/transparent"
+        android:layout_marginBottom="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dialogAdminID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:padding="16dp"
+            android:inputType="textEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutAdminPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Admin Password"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/text_input_stroke"
+        app:hintTextColor="@color/accent_cyan"
+        android:textColorHint="#7A8C99"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/accent_cyan"
+        app:boxBackgroundColor="@android:color/transparent"
+        android:layout_marginBottom="24dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dialogAdminPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:padding="16dp"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVerifyAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="AUTHORIZE ACCESS"
+        android:textColor="@color/base_black"
+        android:fontFamily="@font/orbitron_bold"
+        android:backgroundTint="@color/accent_cyan"
+        app:cornerRadius="14dp"/>
+
+</LinearLayout>

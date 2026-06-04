@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainScrollView"
+    android:background="#000F14"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tvHeading"
+                android:text="Face Authentication"
+                android:textSize="28sp"
+                android:textColor="#00FFFF"
+                android:fontFamily="@font/orbitron_bold"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAdminLogin"
+                android:text="Admin Login"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="#00FFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                app:strokeColor="#00FFFF"
+                app:strokeWidth="1dp"
+                app:cornerRadius="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvHeading"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cameraCard"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="#000"
+            app:strokeColor="#00FFFF"
+            app:strokeWidth="1.5dp"
+            app:cardCornerRadius="16dp">
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/recognitionPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <View
+                android:layout_width="280dp"
+                android:layout_height="330dp"
+                android:layout_gravity="center"
+                android:background="@drawable/camera_border"
+                android:alpha="0.4"
+                android:elevation="5dp" />
+
+            <ImageButton
+                android:id="@+id/btnCloseCamera"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="top|end"
+                android:layout_margin="12dp"
+                android:background="@android:color/transparent"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                app:tint="#00FFFF"
+                android:elevation="10dp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="24dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnScanFace"
+                android:text="START SCANNING"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:fontFamily="@font/orbitron_bold"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#00FFFF"
+                app:cornerRadius="12dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCaptureImage"
+                android:text="CAPTURE MANUAL"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:fontFamily="@font/orbitron_bold"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#00FFFF"
+                app:cornerRadius="12dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnUploadImage"
+                android:text="GALLERY UPLOAD"
+                android:textSize="16sp"
+                android:textColor="#00FFFF"
+                android:fontFamily="@font/orbitron_bold"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#111"
+                app:strokeColor="#00FFFF"
+                app:strokeWidth="1dp"
+                app:cornerRadius="12dp"/>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/loadingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone"
+            android:indeterminateTint="#00FFFF" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/resultCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="32dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="#0A1F24"
+            app:strokeColor="#00FFFF"
+            app:strokeWidth="2dp"
+            app:cardCornerRadius="12dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AUTHENTICATION VERIFIED"
+                    android:textColor="#00FFFF"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/orbitron_bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"/>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1">
+
+                    <TableRow android:padding="8dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="NAME:"
+                            android:textColor="#88FFFFFF"
+                            android:fontFamily="@font/orbitron_bold"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="16dp"/>
+                        <TextView
+                            android:id="@+id/resName"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="---"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="end"
+                            android:maxLines="1"/>
+                    </TableRow>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#22FFFFFF"/>
+
+                    <TableRow android:padding="8dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="USER ID:"
+                            android:textColor="#88FFFFFF"
+                            android:fontFamily="@font/orbitron_bold"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="16dp"/>
+                        <TextView
+                            android:id="@+id/resID"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="---"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="end"/>
+                    </TableRow>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#22FFFFFF"/>
+
+                    <TableRow android:padding="8dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ROLE:"
+                            android:textColor="#88FFFFFF"
+                            android:fontFamily="@font/orbitron_bold"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="16dp"/>
+                        <TextView
+                            android:id="@+id/resRole"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="---"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="end"/>
+                    </TableRow>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#22FFFFFF"/>
+
+                    <TableRow android:padding="8dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CONFIDENCE:"
+                            android:textColor="#88FFFFFF"
+                            android:fontFamily="@font/orbitron_bold"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="16dp"/>
+                        <TextView
+                            android:id="@+id/resConfidence"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="---"
+                            android:textColor="#00FFFF"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="end"/>
+                    </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/tvResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Access Granted"
+                    android:textColor="#00FF00"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/orbitron_bold"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

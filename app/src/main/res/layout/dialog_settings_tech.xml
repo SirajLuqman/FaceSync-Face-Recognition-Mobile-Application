@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/result_card_border"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/diagTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TITLE"
+            android:textColor="#00FFFF"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginBottom="8dp"
+            android:textAllCaps="true"/>
+
+        <TextView
+            android:id="@+id/diagMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Message description..."
+            android:textColor="#FFFFFF"
+            android:alpha="0.8"
+            android:layout_marginBottom="20dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/diagInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="@color/text_input_stroke"
+            app:hintTextColor="#00FFFF"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginBottom="24dp"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/diagEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/diagBtnPositive"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="CONFIRM"
+            android:backgroundTint="#00FFFF"
+            android:textColor="#000F14"
+            app:cornerRadius="12dp"
+            android:fontFamily="sans-serif-black"/>
+
+    </LinearLayout>
+</FrameLayout>
